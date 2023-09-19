@@ -1,0 +1,12 @@
+---
+- name: Installing Apache MSI
+  hosts: windows  #&& linux_group  # all    # cloud_inventory.py 
+  connection: winrm
+  gather_facts: true
+
+  collections:
+    - rzfeeser.simple_windows_collection
+
+  roles:
+    # namespace   # collection name     # role
+    - rzfeeser.simple_windows_collection.windows_bootstrapper
